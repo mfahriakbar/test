@@ -3,18 +3,17 @@
 
 @section('isi')
 
-<div class="container mt-4">
-    <article>
-        <h1>{{ $formulir["tittle"] }}</h1>
-        <h5>{{ $formulir["body"] }}</h5>
-        <a href="/formulir" class="btn btn-primary">Kembali</a>
-         
+<div class="container mt-4">    
+    <Center><h1>PAKTA INTEGRITAS
+        <br>ANTI SPG, KETIDAKBERPIHAKAN DAN KERAHASIAAN</h1></Center>
+        <h5>Saya yang bertanda tangan di bawah ini :
+        </h5>
         <div class="container">
             <form>
                 <div class="mb-3">
                   <label for="nama" class="form-label">Nama</label>
                   <input type="text" class="form-control" id="nama">
-                  <div id="emailHelp" class="form-text">Nama Lengkap</div>
+                  <div id="Help" class="form-text">Nama Lengkap</div>
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
@@ -28,7 +27,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="instansi" class="form-label">Instansi</label>
-                  <input type="text" class="form-control" id="instansi">
+                  <input type="text" class="form-select" id="instansi">
                 </div>
     
                 <p>Menyatakan bahwa saya dengan sungguh-sungguh dalam rangka pelaksanaan pemeriksaan dan pengujian di BPMSPH bersedia menjalankan dan mentaati hal-hal seperti yang tertulis dibawah ini :</p>
@@ -50,10 +49,13 @@
                         <label for="tanggal" class="form-label">Tanggal</label>
                         <input type="date" class="form-control" id="tanggal">
                       </div>
+                      <div class="mb-3">
+                        <label for="tanggal" class="form-label">TTD</label>
+                        <input type="file" class="form-control" id="tanggal">
+                      </div>
             </form>
             </div>
         <button type="submit" class="btn btn-success">Kirim</button>
-    </article>
 </div>
    
 @endsection

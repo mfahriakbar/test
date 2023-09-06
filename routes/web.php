@@ -1,11 +1,7 @@
 <?php
 
-use App\Http\Controllers\Dashboard;
-use App\Http\Controllers\FormController;
-use App\Http\Controllers\FormulirController;
+use App\Http\Controllers\PernyataanController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Formulir;
-use App\Models\Form;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,18 +9,10 @@ use App\Models\Form;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('dashboard');
-// });
-
-// Route::get('/', [Dashboard::class, 'index']);
-// Route::get('/formulir', [Dashboard::class, 'formulir']);
-// Route::get('form/{slug}', [Dashboard::class, 'form']);
 
 Route::get('/', function () {
     return view('home', [
@@ -33,15 +21,5 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get(
-    '/hasil',
-    function () {
-        return view('hasil', [
-            "tittle" => "Hasil",
-            "judul" => "Hasil",
-        ]);
-    }
-);
-
-Route::get('/formulir', [FormulirController::class, 'index']);
-Route::get('/form/{formulir}', [FormulirController::class, 'open']);
+Route::get('/pernyataan/index', [PernyataanController::class, 'index']);
+Route::get('/pernyataan/create', [PernyataanController::class, 'create']);
