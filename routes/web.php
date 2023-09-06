@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\FormulirController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Formulir;
+use App\Models\Form;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +27,21 @@ use App\Models\Formulir;
 // Route::get('form/{slug}', [Dashboard::class, 'form']);
 
 Route::get('/', function () {
-    return view('dashboard', [
+    return view('home', [
         "tittle" => "Home",
         "judul" => "Home",
     ]);
 });
 
-Route::get('/formulir', [FormController::class, 'index']);
-Route::get('/form/{slug}', [FormController::class, 'open']);
+Route::get(
+    '/hasil',
+    function () {
+        return view('hasil', [
+            "tittle" => "Hasil",
+            "judul" => "Hasil",
+        ]);
+    }
+);
+
+Route::get('/formulir', [FormulirController::class, 'index']);
+Route::get('/form/{formulir}', [FormulirController::class, 'open']);

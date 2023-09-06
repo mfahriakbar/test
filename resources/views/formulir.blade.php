@@ -18,9 +18,9 @@
         </style>
         <img src="/img/surat.png" alt="">
         <h3>
-            <a href="/form/{{ $form["slug"] }}" class="btn btn-primary">{{ $form["judul"] }}</a>
+            <a href="/form/{{ $form->id }}" class="btn btn-primary">{{ $form["tittle"] }}</a>
         </h3>
-    <h4>{{ $form["formulir"] }}</h4>
+    <h4>{{ $form->body }}</h4>
 
 
     </article>

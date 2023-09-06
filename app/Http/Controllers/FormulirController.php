@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Formulir;
 use Illuminate\Http\Request;
+use App\Models\Formulir;
 
-class FormController extends Controller
+class FormulirController extends Controller
 {
     public function index()
     {
@@ -16,11 +16,11 @@ class FormController extends Controller
         ]);
     }
 
-    public function open(Formulir $form)
+    public function open(Formulir $formulir)
     {
         return view('form', [
             "tittle" => "Isi Formulir",
-            "formulir" => $form
+            "formulir" => $formulir
         ]);
     }
 }

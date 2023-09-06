@@ -12,6 +12,9 @@
           <li class="nav-item">
             <a class="nav-link {{ ($tittle === "Formulir") ? 'active' : '' }}" href="/formulir">Formulir</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ ($tittle === "Hasil") ? 'active' : '' }}" href="/hasil">Hasil</a>
+          </li>
           {{-- <li class="nav-item">
             <a class="nav-link {{ ($tittle === "Form") ? 'active' : '' }}" href="#form">Form</a>
           </li> --}}

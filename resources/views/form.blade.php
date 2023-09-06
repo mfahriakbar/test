@@ -5,8 +5,8 @@
 
 <div class="container mt-4">
     <article>
-        <h1>{{ $formulir["judul"] }}</h1>
-        <h5>{{ $formulir["formulir"] }}</h5>
+        <h1>{{ $formulir["tittle"] }}</h1>
+        <h5>{{ $formulir["body"] }}</h5>
         <a href="/formulir" class="btn btn-primary">Kembali</a>
          
         <div class="container">
@@ -49,10 +49,6 @@
                       <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
                         <input type="date" class="form-control" id="tanggal">
-                      </div>
-                      <div class="mb-3">
-                        <label for="tanggal" class="form-label">Tanda Tangan</label>
-                        <input type="canvas" class="form-control" id="tanggal">
                       </div>
             </form>
             </div>
