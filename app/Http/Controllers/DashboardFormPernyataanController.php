@@ -39,17 +39,17 @@ class DashboardFormPernyataanController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
-            'email' => ['required', 'max:255', 'unique:users', 'email:dns'],
+            'email' => 'required|email:dns',
             'jabatan' => 'required',
             'instansi' => 'required',
             'kota' => 'required',
             'tanggal' => 'required',
             'ttd' => 'required',
         ]);
-        FormPernyataan::create();
+        FormPernyataan::create($validatedData);
 
         return redirect('/')->with('success', 'Berhasil Mengirim!!');
-        return $request;
+        // return $request;
     }
 
     /**
@@ -61,7 +61,8 @@ class DashboardFormPernyataanController extends Controller
     public function show(FormPernyataan $formPernyataan)
     {
         return view('dashboard.formpernyataan.show', [
-            'formpernyataan' => FormPernyataan::find('id'),
+            // 'formpernyataan' => FormPernyataan::find('id'),
+            'formpernyataan' => $formPernyataan,
         ]);
     }
 

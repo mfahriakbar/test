@@ -44,5 +44,6 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::resource('/dashboard/formpernyataan', DashboardFormPernyataanController::class)->middleware('auth');
+// Route::get('/dashboard/formpernyataan/{id}', DashboardFormPernyataanController::class)->middleware('auth');
 // Route::post('/dashboard/formpernyataan', DashboardFormPernyataanController::class);
 // Route::post('/pernyataan/create', DashboardFormPernyataanController::class, 'store');

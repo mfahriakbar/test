@@ -21,7 +21,7 @@
                 <div class="mb-3">
                   <label for="nama" class="form-label">Nama</label>
                   <input type="text" class="form-control @error('nama') is-invalid
-                  @enderror" id="nama" name="nama">
+                  @enderror" id="nama" name="nama" value="{{ old('nama') }}">
                   <div id="Help" class="form-text">Nama Lengkap</div>
                   @error('nama')
           <div class="invalid-feedback">
@@ -32,7 +32,7 @@
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
                   <input type="email" class="form-control @error('email') is-invalid
-                  @enderror" id="email" name="email">
+                  @enderror" id="email" name="email" value="{{ old('email') }}">
                   <div id="emailHelp" class="form-text">
                     example@example.com</div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="mb-3">
                   <label for="jabatan" class="form-label">Jabatan</label>
                   <input type="text" class="form-select @error('jabatan') is-invalid
-                  @enderror" id="jabatan" name="jabatan">
+                  @enderror" id="jabatan" name="jabatan" value="{{ old('jabatan') }}">
                 </div>
                 @error('jabatan')
                 <div class="invalid-feedback">
@@ -54,7 +54,7 @@
                 <div class="mb-3">
                   <label for="instansi" class="form-label">Instansi</label>
                   <input type="text" class="form-select @error('instansi') is-invalid
-                  @enderror" id="instansi" name="instansi">
+                  @enderror" id="instansi" name="instansi" value="{{ old('instansi') }}">
                 </div>
                 @error('instansi')
                 <div class="invalid-feedback">
@@ -76,7 +76,7 @@
                     <div class="mb-3">
                         <label for="kota" class="form-label">Kota</label>
                         <input type="text" class="form-select @error('kota') is-invalid
-                        @enderror" id="kota" name="kota">
+                        @enderror" id="kota" name="kota" value="{{ old('kota') }}">
                       </div>
                       @error('kota')
                       <div class="invalid-feedback">
@@ -86,7 +86,7 @@
                       <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
                         <input type="date" class="form-control @error('tanggal') is-invalid
-                        @enderror" id="tanggal" name="tanggal">
+                        @enderror" id="tanggal" name="tanggal" value="{{ old('tanggal') }}">
                       </div>
                       @error('tanggal')
                       <div class="invalid-feedback">
@@ -96,7 +96,7 @@
                       <div class="mb-3">
                         <label for="ttd" class="form-label">TTD</label>
                         <input type="file" class="form-control @error('ttd') is-invalid
-                        @enderror" id="ttd" name="ttd">
+                        @enderror" id="ttd" name="ttd" value="{{ old('ttd') }}">
                       </div>
                       @error('ttd')
                       <div class="invalid-feedback">
