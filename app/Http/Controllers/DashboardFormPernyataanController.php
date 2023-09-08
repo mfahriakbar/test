@@ -48,7 +48,7 @@ class DashboardFormPernyataanController extends Controller
         ]);
         FormPernyataan::create($validatedData);
 
-        return redirect('/')->with('success', 'Berhasil Mengirim!!');
+        return redirect('/pernyataan/create')->with('success', 'Berhasil Mengirim!!');
         // return $request;
     }
 

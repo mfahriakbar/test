@@ -22,7 +22,7 @@
                   <label for="nama" class="form-label">Nama</label>
                   <input type="text" class="form-control @error('nama') is-invalid
                   @enderror" id="nama" name="nama" value="{{ old('nama') }}">
-                  <div id="Help" class="form-text">Nama Lengkap</div>
+                  <div id="nama" class="form-text">Nama Lengkap</div>
                   @error('nama')
           <div class="invalid-feedback">
             {{ $message }}
@@ -33,35 +33,35 @@
                   <label for="email" class="form-label">Email</label>
                   <input type="email" class="form-control @error('email') is-invalid
                   @enderror" id="email" name="email" value="{{ old('email') }}">
-                  <div id="emailHelp" class="form-text">
+                  <div id="email" class="form-text">
                     example@example.com</div>
-                </div>
                 @error('email')
                 <div class="invalid-feedback">
                   {{ $message }}
                 </div>
                 @enderror
+              </div>
                 <div class="mb-3">
                   <label for="jabatan" class="form-label">Jabatan</label>
                   <input type="text" class="form-select @error('jabatan') is-invalid
                   @enderror" id="jabatan" name="jabatan" value="{{ old('jabatan') }}">
-                </div>
-                @error('jabatan')
-                <div class="invalid-feedback">
-                  {{ $message }}
+                  @error('jabatan')
+                  <div class="invalid-feedback">
+                    {{ $message }}
                 </div>
                 @enderror
+              </div>
                 <div class="mb-3">
                   <label for="instansi" class="form-label">Instansi</label>
                   <input type="text" class="form-select @error('instansi') is-invalid
                   @enderror" id="instansi" name="instansi" value="{{ old('instansi') }}">
+                  @error('instansi')
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
+                  @enderror
                 </div>
-                @error('instansi')
-                <div class="invalid-feedback">
-                  {{ $message }}
-                </div>
-                @enderror
-    
+                  
                 <p>Menyatakan bahwa saya dengan sungguh-sungguh dalam rangka pelaksanaan pemeriksaan dan pengujian di BPMSPH bersedia menjalankan dan mentaati hal-hal seperti yang tertulis dibawah ini :</p>
                 <p>1. Berperan secara pro aktif dalam upaya pencegahan dan pemberantasan Korupsi, Kolusi dan Nepotisme (KKN) serta tidak melibatkan diri dalam perbuatan tercela;<br>
                     2. Berkomitmen tidak meminta pemberian secara langsung dan/atau tidak langsung berupa suap, hadiah, bantuan, atau bentuk lainnya yang tidak sesuai dengan ketentuan yang berlaku serta melaporkan pemberian tersebut apabila menerimanya;<br>
@@ -77,32 +77,32 @@
                         <label for="kota" class="form-label">Kota</label>
                         <input type="text" class="form-select @error('kota') is-invalid
                         @enderror" id="kota" name="kota" value="{{ old('kota') }}">
+                        @error('kota')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>
+                        @enderror
                       </div>
-                      @error('kota')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>
-                      @enderror
                       <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
                         <input type="date" class="form-control @error('tanggal') is-invalid
                         @enderror" id="tanggal" name="tanggal" value="{{ old('tanggal') }}">
-                      </div>
-                      @error('tanggal')
+                        @error('tanggal')
                       <div class="invalid-feedback">
                         {{ $message }}
                       </div>
                       @enderror
+                    </div>
                       <div class="mb-3">
                         <label for="ttd" class="form-label">TTD</label>
                         <input type="file" class="form-control @error('ttd') is-invalid
                         @enderror" id="ttd" name="ttd" value="{{ old('ttd') }}">
+                        @error('ttd')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>
+                        @enderror
                       </div>
-                      @error('ttd')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>
-                      @enderror
                       <button type="submit" class="btn btn-success">Kirim</button>
                     </form>
           </div>

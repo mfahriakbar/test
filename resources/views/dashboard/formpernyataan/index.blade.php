@@ -16,15 +16,15 @@
         </tr>
       </thead>
       <tbody>
-        @foreach ($formpernyataan as $f )
+        @foreach ($formpernyataan as $formpernyataan )
           
         <tr>
           <td>{{ $loop->iteration }}</td>
-          <td>{{ $f->nama }}</td>
-          <td>{{ $f->email }}</td>
-          <td>{{ $f->jabatan }}</td>
+          <td>{{ $formpernyataan->nama }}</td>
+          <td>{{ $formpernyataan->email }}</td>
+          <td>{{ $formpernyataan->jabatan }}</td>
           <td>
-            <a href="/dashboard/formpernyataan/{{ $f->id }}" class="badge bg-primary"><span data-feather="file-text"></span></a>
+            <a href="/dashboard/formpernyataan/{{ $formpernyataan->id }}" class="badge bg-primary"><span data-feather="file-text"></span></a>
             <a href="" class="badge bg-danger"><span data-feather="x-circle"></span></a>
           </td>
         </tr>
