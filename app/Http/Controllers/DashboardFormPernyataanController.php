@@ -37,18 +37,18 @@ class DashboardFormPernyataanController extends Controller
      */
     public function store(Request $request)
     {
-        // $validatedData = $request->validate([
-        //     'nama' => 'required|max:255',
-        //     'email' => ['required', 'max:255', 'unique:users', 'email:dns'],
-        //     'jabatan' => 'required',
-        //     'isntansi' => 'required',
-        //     'kota' => 'required',
-        //     'tanggal' => 'required',
-        //     'ttd' => '0',
-        // ]);
-        // FormPernyataan::create();
+        $validatedData = $request->validate([
+            'nama' => 'required|max:255',
+            'email' => ['required', 'max:255', 'unique:users', 'email:dns'],
+            'jabatan' => 'required',
+            'instansi' => 'required',
+            'kota' => 'required',
+            'tanggal' => 'required',
+            'ttd' => 'required',
+        ]);
+        FormPernyataan::create();
 
-        // return redirect('/')->with('success', 'Berhasil Mengirim!!');
+        return redirect('/')->with('success', 'Berhasil Mengirim!!');
         return $request;
     }
 

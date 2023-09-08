@@ -31,18 +31,36 @@
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="email">
+                  <input type="email" class="form-control @error('email') is-invalid
+                  @enderror" id="email" name="email">
                   <div id="emailHelp" class="form-text">
                     example@example.com</div>
                 </div>
+                @error('email')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div>
+                @enderror
                 <div class="mb-3">
                   <label for="jabatan" class="form-label">Jabatan</label>
-                  <input type="text" class="form-select" id="jabatan" name="jabatan">
+                  <input type="text" class="form-select @error('jabatan') is-invalid
+                  @enderror" id="jabatan" name="jabatan">
                 </div>
+                @error('jabatan')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div>
+                @enderror
                 <div class="mb-3">
                   <label for="instansi" class="form-label">Instansi</label>
-                  <input type="text" class="form-select" id="instansi" name="instansi">
+                  <input type="text" class="form-select @error('instansi') is-invalid
+                  @enderror" id="instansi" name="instansi">
                 </div>
+                @error('instansi')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div>
+                @enderror
     
                 <p>Menyatakan bahwa saya dengan sungguh-sungguh dalam rangka pelaksanaan pemeriksaan dan pengujian di BPMSPH bersedia menjalankan dan mentaati hal-hal seperti yang tertulis dibawah ini :</p>
                 <p>1. Berperan secara pro aktif dalam upaya pencegahan dan pemberantasan Korupsi, Kolusi dan Nepotisme (KKN) serta tidak melibatkan diri dalam perbuatan tercela;<br>
@@ -57,16 +75,34 @@
     
                     <div class="mb-3">
                         <label for="kota" class="form-label">Kota</label>
-                        <input type="text" class="form-select" id="kota" name="kota">
+                        <input type="text" class="form-select @error('kota') is-invalid
+                        @enderror" id="kota" name="kota">
                       </div>
+                      @error('kota')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                      @enderror
                       <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
-                        <input type="date" class="form-control" id="tanggal" name="tanggal">
+                        <input type="date" class="form-control @error('tanggal') is-invalid
+                        @enderror" id="tanggal" name="tanggal">
                       </div>
+                      @error('tanggal')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                      @enderror
                       <div class="mb-3">
                         <label for="ttd" class="form-label">TTD</label>
-                        <input type="file" class="form-control" id="ttd" name="ttd">
+                        <input type="file" class="form-control @error('ttd') is-invalid
+                        @enderror" id="ttd" name="ttd">
                       </div>
+                      @error('ttd')
+                      <div class="invalid-feedback">
+                        {{ $message }}
+                      </div>
+                      @enderror
                       <button type="submit" class="btn btn-success">Kirim</button>
                     </form>
           </div>
