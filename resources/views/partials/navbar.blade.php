@@ -18,7 +18,10 @@
               <li><a class="dropdown-item" href="#">Formulir 2</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
+          </li>
+          {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle {{ ($tittle === "Tabel Formulir") ? 'active' : '' }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Tabel
             </a>
@@ -26,7 +29,7 @@
               <li><a class="dropdown-item {{ ($tittle === "Tabel Formulir") ? 'active' : '' }}" href="/pernyataan/index">Tabel Formulir Pernyataan</a></li>
               <li><a class="dropdown-item" href="#">Formulir 2</a></li>
             </ul>
-          </li>
+          </li> --}}
           {{-- <li class="nav-item">
             <a class="nav-link {{ ($tittle === "Form") ? 'active' : '' }}" href="#form">Form</a>
           </li> --}}

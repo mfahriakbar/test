@@ -4,30 +4,44 @@
 @section('isi')
 
 <div class="container mt-4">    
+  @if (session()->has('success'))
+
+  <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
     <Center><h1>PAKTA INTEGRITAS
         <br>ANTI SPG, KETIDAKBERPIHAKAN DAN KERAHASIAAN</h1></Center>
         <h5>Saya yang bertanda tangan di bawah ini :
         </h5>
         <div class="container">
-            <form>
+            <form method="post" action="/dashboard/formpernyataan">
+              @csrf
                 <div class="mb-3">
                   <label for="nama" class="form-label">Nama</label>
-                  <input type="text" class="form-control" id="nama">
+                  <input type="text" class="form-control @error('nama') is-invalid
+                  @enderror" id="nama" name="nama">
                   <div id="Help" class="form-text">Nama Lengkap</div>
+                  @error('nama')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email">
+                  <input type="email" class="form-control" id="email" name="email">
                   <div id="emailHelp" class="form-text">
                     example@example.com</div>
                 </div>
                 <div class="mb-3">
                   <label for="jabatan" class="form-label">Jabatan</label>
-                  <input type="text" class="form-select" id="jabatan">
+                  <input type="text" class="form-select" id="jabatan" name="jabatan">
                 </div>
                 <div class="mb-3">
                   <label for="instansi" class="form-label">Instansi</label>
-                  <input type="text" class="form-select" id="instansi">
+                  <input type="text" class="form-select" id="instansi" name="instansi">
                 </div>
     
                 <p>Menyatakan bahwa saya dengan sungguh-sungguh dalam rangka pelaksanaan pemeriksaan dan pengujian di BPMSPH bersedia menjalankan dan mentaati hal-hal seperti yang tertulis dibawah ini :</p>
@@ -43,19 +57,19 @@
     
                     <div class="mb-3">
                         <label for="kota" class="form-label">Kota</label>
-                        <input type="text" class="form-select" id="kota">
+                        <input type="text" class="form-select" id="kota" name="kota">
                       </div>
                       <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
-                        <input type="date" class="form-control" id="tanggal">
+                        <input type="date" class="form-control" id="tanggal" name="tanggal">
                       </div>
                       <div class="mb-3">
-                        <label for="tanggal" class="form-label">TTD</label>
-                        <input type="file" class="form-control" id="tanggal">
+                        <label for="ttd" class="form-label">TTD</label>
+                        <input type="file" class="form-control" id="ttd" name="ttd">
                       </div>
-            </form>
-            </div>
-        <button type="submit" class="btn btn-success">Kirim</button>
+                      <button type="submit" class="btn btn-success">Kirim</button>
+                    </form>
+          </div>
 </div>
    
 @endsection
