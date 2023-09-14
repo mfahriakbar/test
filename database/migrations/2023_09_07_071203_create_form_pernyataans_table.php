@@ -21,7 +21,8 @@ class CreateFormPernyataansTable extends Migration
             $table->string('instansi');
             $table->string('kota');
             $table->date('tanggal');
-            $table->string('ttd');
+            // $table->string('ttd');
+            // $table->string('isi');
             $table->timestamps();
         });
     }

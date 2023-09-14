@@ -98,3 +98,15 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+#judul-surat{
+  text-align: center;
+}
+
+#badan-surat{
+  width: auto;
+  height: auto;
+  position: absolute;
+  border: 1px solid;
+  padding: 60px;
+}

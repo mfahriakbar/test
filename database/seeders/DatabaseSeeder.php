@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // \App\Models\User::factory(5)->create();
 
         User::create([
-            'name' => 'yoga',
+            'name' => 'Tamu',
             'username' => 'tamu',
             'notelp' => '0088',
             'email' => 'tamu@gmail.com',
@@ -31,7 +31,22 @@ class DatabaseSeeder extends Seeder
             'instansi' => 'ruang',
             'kota' => 'bogor',
             'tanggal' => '2017-09-13',
-            'ttd' => 0,
+        ]);
+        FormPernyataan::create([
+            'nama' => 'tamu1',
+            'email' => 'tamu1@gmail.com',
+            'jabatan' => 'anggota',
+            'instansi' => 'ruang',
+            'kota' => 'bogor',
+            'tanggal' => '2017-09-13',
+        ]);
+        FormPernyataan::create([
+            'nama' => 'tamu2',
+            'email' => 'tamu2@gmail.com',
+            'jabatan' => 'anggota',
+            'instansi' => 'ruang',
+            'kota' => 'bogor',
+            'tanggal' => '2017-09-13',
         ]);
     }
 }

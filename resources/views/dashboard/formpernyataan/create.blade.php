@@ -1,7 +1,7 @@
 
-@extends('layouts.main')
+@extends('dashboard.layouts.main')
 
-@section('isi')
+@section('container')
 
 <div class="container mt-4">    
   @if (session()->has('success'))
@@ -16,7 +16,7 @@
         <h5>Saya yang bertanda tangan di bawah ini :
         </h5>
         <div class="container">
-            <form method="post" action="/dashboard/formpernyataan">
+            <form method="post" action="/dashboard/formpernyataan" enctype="multipart/form-data">
               @csrf
                 <div class="mb-3">
                   <label for="nama" class="form-label">Nama</label>
@@ -93,17 +93,7 @@
                       </div>
                       @enderror
                     </div>
-                      <div class="mb-3">
-                        <label for="ttd" class="form-label">TTD</label>
-                        <input type="file" class="form-control @error('ttd') is-invalid
-                        @enderror" id="ttd" name="ttd" value="{{ old('ttd') }}">
-                        @error('ttd')
-                        <div class="invalid-feedback">
-                          {{ $message }}
-                        </div>
-                        @enderror
-                      </div>
-                      <button type="submit" class="btn btn-success">Kirim</button>
+                      <button type="submit" class="btn btn-success mb-5">Kirim</button>
                     </form>
           </div>
 </div>

@@ -1,6 +1,14 @@
 @extends('layouts.main')
 @section('isi')
 
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+{{-- CSS --}}
+<link rel="stylesheet" href="/css/style.css">
+
 <div class="row justify-content-center">
   <div class="col-md-4">
     
@@ -36,10 +44,6 @@
           </div>
           @enderror
         </div>
-        {{-- <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Email address</label>
-        </div> --}}
         <div class="form-floating">
           <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
           <label for="password">Password</label>

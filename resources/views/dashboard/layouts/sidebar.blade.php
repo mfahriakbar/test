@@ -13,11 +13,5 @@
             Form Pernyataan
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">
-            <span data-feather="file-text"></span>
-            ???
-          </a>
-        </li>
     </div>
   </nav>

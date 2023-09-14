@@ -9,7 +9,7 @@
           <li class="nav-item">
             <a class="nav-link {{ ($tittle === "Home") ? 'active' : '' }}" aria-current="page" href="/">Home</a>
           </li>
-          <li class="nav-item dropdown">
+          {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle {{ ($tittle === "Formulir") ? 'active' : '' }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Formulir
             </a>
@@ -20,7 +20,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
-          </li>
+          </li> --}}
           {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle {{ ($tittle === "Tabel Formulir") ? 'active' : '' }}" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Tabel
@@ -57,8 +57,8 @@
             <li class="nav-item">
               <a href="/login" class="nav-link {{ ($tittle === "Login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i>Login</a>
             </li>
+            @endauth
           </ul>
-        @endauth
 
       </div>
     </div>

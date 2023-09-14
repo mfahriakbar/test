@@ -3,8 +3,30 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Tabel Form</h1>
   </div>
+  @if (session()->has('success'))
+
+  <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
+  @if (session()->has('danger'))
+
+  <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+    {{ session('danger') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
+  @if (session()->has('warning'))
+
+  <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
+    {{ session('warning') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
+
   <div class="table-responsive col-lg-10">
-    <a href="/pernyataan/create" class="btn btn-info">Create</a>
+    <a href="/dashboard/formpernyataan/create" class="btn btn-info">Create</a>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
@@ -25,7 +47,12 @@
           <td>{{ $formpernyataan->jabatan }}</td>
           <td>
             <a href="/dashboard/formpernyataan/{{ $formpernyataan->id }}" class="badge bg-primary"><span data-feather="file-text"></span></a>
-            <a href="" class="badge bg-danger"><span data-feather="x-circle"></span></a>
+            <a href="/dashboard/formpernyataan/{{ $formpernyataan->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+            <form action="/dashboard/formpernyataan/{{ $formpernyataan->id }}" method="post" class="d-inline">
+            @method('delete')
+            @csrf
+            <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus Ini?')"><span data-feather="trash-2"></span></button>
+            </form>
           </td>
         </tr>
 
