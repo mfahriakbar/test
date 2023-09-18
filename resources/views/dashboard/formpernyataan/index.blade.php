@@ -52,6 +52,7 @@
             @method('delete')
             @csrf
             <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus Ini?')"><span data-feather="trash-2"></span></button>
+            <a href="/dashboard/exportpdf/{{ $formpernyataan->id }}" class="badge bg-info"><span data-feather="printer"></span></a>
             </form>
           </td>
         </tr>

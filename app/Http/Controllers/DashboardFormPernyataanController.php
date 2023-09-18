@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FormPernyataan;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class DashboardFormPernyataanController extends Controller
@@ -127,5 +128,27 @@ class DashboardFormPernyataanController extends Controller
         FormPernyataan::destroy($id);
 
         return redirect('/dashboard/formpernyataan')->with('danger', 'Berhasil Menghapus!!');
+    }
+
+    public function exportpdf(Request $request, $id)
+    {
+        $aturan = 'Menyatakan bahwa saya dengan sungguh-sungguh dalam rangka pelaksanaan pemeriksaan dan
+        pengujian di BPMSPH bersedia menjalankan dan mentaati hal-hal seperti yang tertulis dibawah ini :';
+        $aturan1 = '1. Berperan secara pro aktif dalam upaya pencegahan dan pemberantasan Korupsi, Kolusi dan Nepotisme (KKN) serta tidak melibatkan diri dalam perbuatan tercela;';
+        $aturan2 = '2. Berkomitmen tidak meminta pemberian secara langsung dan/atau tidak langsung berupa suap, hadiah, bantuan, atau bentuk lainnya yang tidak sesuai dengan ketentuan yang berlaku serta melaporkan pemberian tersebut apabila menerimanya;';
+        $aturan3 = '3. Berkomitmen bersikap transparan, jujur, objektif dan akuntabel untuk tidak terlibat atau terpengaruh terhadap tekanan komersial, keuangan yang dapat mempengaruhi hasil pengujian untuk menghindari benturan kepentingan (conflict of interest) dalam pelaksanaan tugas;';
+        $aturan4 = '4. Berkomitmen untuk bebas dari kegiatan lain, internal dan eksternal yang dapat mengurangi kepercayaan dalam kemandirian pertimbangan dan integritas dalam kegiatan pengujian, dan berpengaruh buruk terhadap mutu kerja;';
+        $aturan5 = '5. Berkomitmen untuk bekerja secara profesional, menjunjung tinggi aturan yang berlaku baik di lingkungan laboratorium pengujian;';
+        $aturan6 = '6. Berkomitmen untuk menjaga kerahasiaan informasi dan hak kepemilikan dari pelanggan Laboratorium sesuai dengan persyaratan dan ketentuan yang berlaku, termasuk informasi dalam bentuk elektronik;';
+        $aturan7 = '7. Berkomitmen memberi contoh dalam kepatuhan terhadap peraturan perundang-undangan dalam melaksanaan tugas terutama kepada pegawai yang berada di bawah pengawasan saya dan sesama pegawai di lingkungan kerja saya secara konsisten;';
+        $aturan8 = '8. Berkomitmen menyampaikan informasi penyimpangan integritas serta turut menjaga kerahasiaan atas pelanggaran peraturan yang dilaporkannya;';
+        $aturan9 = '9. Bila saya melanggar hal-hal tersebut di atas, saya siap menghadapi konsekuensi berdasarkan ketentuan dan perundang-undangan yang berlaku.';
+
+        // $imgpath = public_path('img/kop.jpg');
+        $data = FormPernyataan::find($id);
+        // view()->share('data', $data);
+        $pdf = Pdf::loadView('dashboard.exportpdf', ['data' => $data], compact('aturan', 'aturan1', 'aturan2', 'aturan3', 'aturan4', 'aturan5', 'aturan6', 'aturan7', 'aturan8', 'aturan9',));
+        // dd($data);
+        return $pdf->stream('hasil.pdf');
     }
 }

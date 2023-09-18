@@ -43,6 +43,10 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard/exportpdf/{id}', [DashboardFormPernyataanController::class, 'exportpdf']);
+});
+
 Route::resource('/dashboard/formpernyataan', DashboardFormPernyataanController::class)->middleware('auth');
 // Route::get('/dashboard/formpernyataan/{id}', DashboardFormPernyataanController::class)->middleware('auth');
 // Route::post('/dashboard/formpernyataan', DashboardFormPernyataanController::class);

@@ -1,11 +1,12 @@
 @extends('dashboard.layouts.main')
 @section('container')
 
-<a href="" class="btn btn-info mt-4 mb-4"><span data-feather="file-text"></span> Cetak</a>
+<a href="/dashboard/exportpdf/{{ $show->id }}" class="btn btn-info mt-4 mb-4"><span data-feather="file-text"></span> Cetak</a>
 
 <div class="container" id="badan-surat">
 
     <center><img src="/img/kop.jpg" alt=""></center>
+    {{-- <center><img src="/img/surat.png" alt=""></center> --}}
 
     <h3 id="judul-surat">PAKTA INTEGRITAS<br>ANTI SPG, KETIDAKBERPIHAKAN DAN KERAHASIAAN</h3>
     <p>Saya yang bertanda tangan di bawah ini :</p>
