@@ -43,7 +43,7 @@
               </div>
                 <div class="mb-3">
                   <label for="jabatan" class="form-label">Jabatan</label>
-                  <input type="text" class="form-select @error('jabatan') is-invalid
+                  <input type="text" class="form-control @error('jabatan') is-invalid
                   @enderror" id="jabatan" name="jabatan" value="{{ old('jabatan') }}">
                   @error('jabatan')
                   <div class="invalid-feedback">
@@ -53,7 +53,7 @@
               </div>
                 <div class="mb-3">
                   <label for="instansi" class="form-label">Instansi</label>
-                  <input type="text" class="form-select @error('instansi') is-invalid
+                  <input type="text" class="form-control @error('instansi') is-invalid
                   @enderror" id="instansi" name="instansi" value="{{ old('instansi') }}">
                   @error('instansi')
                   <div class="invalid-feedback">
@@ -75,7 +75,7 @@
     
                     <div class="mb-3">
                         <label for="kota" class="form-label">Kota</label>
-                        <input type="text" class="form-select @error('kota') is-invalid
+                        <input type="text" class="form-control @error('kota') is-invalid
                         @enderror" id="kota" name="kota" value="{{ old('kota') }}">
                         @error('kota')
                         <div class="invalid-feedback">
